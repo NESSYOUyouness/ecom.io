@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+  <header class="header"> 
+      <div class="container">
+         <div class="row v-center">                
+               <!-- <div class="header-item item-left">
+                  <div class="logo"><a href="#">Shopit</a></div>
+               </div> -->
+               <div class="header-item item-center">
+                  <div class="menu-overlay"></div>
+                  <nav class="menu">
+                      
+                  </nav>
+               </div>
+               <!-- <div class="header-item item-right">
+                  <a href="#" class="user">
+                     <i class="far fa-user"></i>
+                  </a>
+                  
+                  <div class="mobile-menu-trigger">
+                     <span></span>
+                  </div>
+               </div> -->
+         </div>
+      </div>
+  </header>
+
+    <!-- cart -->
+    <button id="cart-btn">
+      <!-- <i class="fa-brands fa-opencart fa-xl"></i> -->
+    </button>
+    <div class="title-card" style="text-align: center;">
+      <h2 class="product-title" dir="rtl" >اختر المنتجات التي تريد ثم ادخل عنوانك في الاسفل</h2>
+      <i class="fa fa-angle-double-down" style="font-size: 30px; font-weight: 700; margin-top: -290px;" ></i>
+   </div>
+    <!-- cart sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+      <!-- header -->
+      <div class="cart-header-padding">
+        <div class="cart-header">
+          <p style="opacity: 0;">
+            <span class="title" >cart</span>
+            <span class="items"
+              >(<span id="total-quantity"></span>
+              <span id="total-quantity-text"></span>)</span
+            >
+          </p>
+          
+        </div>
+      </div>
+      <!-- products -->
+      <div id="cart-products" class="cart-products"></div>
+
+      <!-- footer -->
+      <div class="cart-footer" >
+        <div class="total" dir="rtl">
+          <p>المجموع</p>
+          <p>$<span id="total-price"></span></p>
+        </div>
+      </div>
+      <button id="close-btn">
+      </button>
+    </div>
+    <div class="container">
+      <div class="row justify-content-center">
+      <div class="col-md-5">
+      <div class="card">
+        <h2 class="card-title text-center" dir="rtl">للطلب المرجو إدخال معلوماتك في الخانات اسفله</h2>
+        <div class="card-body py-md-4">
+        <form _lpchecked="1" id="form">
+            <div class="form-group">
+               <input dir="rtl"  type="text" class="form-control form_info" id="name" placeholder="أكتب اسمك..">
+            </div>
+            <div class="form-group">
+               <input dir="rtl" type="text"  class="form-control form_info"  id="phone" placeholder=" أكتب رقم هاتفك..">
+            </div>
+            <div class="form-group">
+               <input dir="rtl" type="text" class="form-control form_info"   id="phoneWhatsapp" placeholder=" أكتب رقم واتساب..">
+            </div>
+            <div class="d-flex flex-row align-items-center justify-content-between">
+            <button class="btn btn-primary btn_form" id="button_form_snd"  dir="rtl">
+                انقر هنا لشراء المنتج 
+            </button>
+            </div>
+            <!-- <button type="button" class="swal2-confirm swal2-styled" aria-label="" style="display: inline-block;"> 
+                <a href="">OK</a>
+            </button> -->
+        </form>
+            <script>
+               function validate() {
+                     let phone = document.querySelector("#phone");
+                     let phoneWhatsapp = document.querySelector("#phoneWhatsapp");
+                     let name = document.querySelector("#name");
+                     let sendBtn = document.querySelector("#button_form_snd");
+
+                     sendBtn.addEventListener("click" ,(e)=>{
+                        e.preventDefault();
+                        if( name.value != "" && phone.value != "" && phoneWhatsapp.value != ""){
+                           sendMail( phone.value , phoneWhatsapp.value , name.value) ;
+                           success();
+                        }
+                        else{
+                           emptyerror();
+                        //    redirect();                   
+                        }
+                     });
+               }
+               function sendMail( phone , phoneWhatsapp ,name) {
+                  
+                     emailjs.send("service_7fkuwuq", "template_wkdukfl",{
+                        to_name: name,
+                        from_name: phoneWhatsapp ,
+                        message: phone,
+                  });
+               }
+               function emptyerror() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: '... انتبه',                
+                        text: '! المرجو ملأ جميع الخانات للطلب',
+                        
+                    })
+               }
+               validate() ;
+               function success() {
+                    Swal.fire(
+                        ' ! أحسنت',
+                        'قم بالنقر فوق الزر للخروج',
+                        'success',
+
+                    )
+                    phone.value = '';
+                    phoneWhatsapp.value = '';
+                    name.value = '';
+                    window.location.href = 'http://localhost:5500/ThanksPage.html';
+                }
+                 
+            </script>
+
+            
+
+         </div>
+      </div>
+   </div>
+   </div>
+    </div>
+    <!-- js -->
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  
+  <script type="text/javascript">
+    emailjs.init('sZJT3SAwAUiRiKAmE')
+  </script>
+    <script src="main.js"></script>
+
+
+
+  </body>
+</html>

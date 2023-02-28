@@ -1,0 +1,91 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "img": "./img/Product1.jpeg",
+      "name": "الأبجورة السحرية ",
+      "price": 89 ,
+      "price2": 200 ,
+      "quantity": 0
+    },
+    {
+      "id": 2,
+      "img": "./img/Product2.jpeg",
+      "name": " قطاعة الخضر الكهربائية",
+      "price": 120 ,
+      "price2": 250 ,
+      "quantity": 0
+    },
+    {
+      "id": 3,
+      "img": "./img/Product3.jpeg",
+      "name": "علبة للمحافظة على الطعام ساخن ",
+      "price": 99,
+      "price2": 220 ,
+      "quantity": 0
+    },
+    {
+      "id": 4,
+      "img": "./img/Product4.jpeg",
+      "name": " ممسحة التنظيف متعددة الإستعملات",
+      "price": 150,
+      "price2": 280,
+      "quantity": 0
+    },
+    {
+      "id": 5,
+      "img": "./img/Product5.jpeg",
+      "name": "العصارة الكهربائية المحمولة",
+      "price": 150,
+      "price2": 300,
+      "quantity": 0
+    }
+    ,
+    {
+      "id": 6,
+      "img": "./img/Product6.jpeg",
+      "name": "مكنسة النظيف المحمولة",
+      "price": 180,
+      "price2": 300,
+      "quantity": 0
+    }
+    ,
+    {
+      "id": 7,
+      "img": "./img/Product7.jpeg",
+      "name": "مكبر الصوت المحمول",
+      "price": 79 ,
+      "price2": 120,
+      "quantity": 0
+    }
+    ,
+    {
+      "id": 8,
+      "img": "./img/Product8.jpeg",
+      "name": "رشاش الماء الذكي",
+      "price": 79,
+      "price2": 200 ,
+      "quantity": 0
+    }
+    ,
+    {
+      "id": 9,
+      "img": "./img/Product9.jpeg",
+      "name": "فرشاة التنظيف متعددة الاستعالات",
+      "price": 45 ,
+      "price2": 90,
+      "quantity": 0
+    }
+    ,
+    {
+      "id": 10,
+      "img": "./img/Product10.jpeg",
+      "name": "أداة المساج الذكية",
+      "price": 99,
+      "price2": 250,
+      "quantity": 0
+    }
+
+
+  ]
+}

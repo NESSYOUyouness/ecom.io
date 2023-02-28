@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+          <title>Document</title>
+</head>
+<body>
+          <h2 class="titel_top">شكرا لطلبك من متجرنا </h2>
+          <h3 class="titel_top">المرجو الضغط على الزر الأخضر لتأكيد طلبك عبر الواتساب</h3>
+          <div class="pulse">
+                    <!-- <i class="fas fa-bell"></i> -->
+                    <i class="fab fa-whatsapp"></i>
+          </div>
+</body>
+</html>
+
+<style>
+
+body{
+          background: #cdffdf;
+}
+
+
+.titel_top {
+    text-align: center;
+    margin-top: 20px;
+    color: #155e0c;
+    border: 1px solid;
+    padding: 20px;
+    width: 80%;
+    align-items: center;
+    margin-left: 2%;
+    border-radius: 10px;
+    color: black;
+}
+.pulse{
+          height: 90px;
+          width: 90px;
+          background: #24bf5e;
+          /* background: linear-gradient(#a5fbc5, #179345); */ 
+          position: absolute;
+          margin: auto;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          border-radius: 50%;
+          display: grid;
+          place-items: center;
+          font-size: 50px;
+          color: #ffffff;
+}
+i.fab.fa-whatsapp {
+    font-size: 35px;
+    font-weight: 600;
+}
+.pulse:before,
+.pulse:after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #86edab;
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.7;
+}
+.pulse:before{
+    animation: pulse 2s ease-out infinite;
+}
+.pulse:after{
+    animation: pulse 2s 1s ease-out infinite;
+}
+@keyframes pulse{
+    100%{
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+</style>
