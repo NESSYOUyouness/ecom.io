@@ -2,7 +2,7 @@
   "products": [
     {
       "id": 1,
-      "img": "./Product1.jpeg",
+      "img": "/Product1.jpeg",
       "name": "الأبجورة السحرية ",
       "price": 89 ,
       "price2": 200 ,
@@ -10,7 +10,7 @@
     },
     {
       "id": 2,
-      "img": "./Product2.jpeg",
+      "img": "Product2.jpeg",
       "name": " قطاعة الخضر الكهربائية",
       "price": 120 ,
       "price2": 250 ,
