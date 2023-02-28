@@ -2,7 +2,7 @@
   "products": [
     {
       "id": 1,
-      "img": "./Product1.jpeg",
+      "img": "Product1.jpeg",
       "name": "الأبجورة السحرية ",
       "price": 89 ,
       "price2": 200 ,
